@@ -1,0 +1,6 @@
+firecrawl
+pandas
+openpyxl
+py-dotenv
+groq
+fc-240ee3d23dee4ffa9499e6550cd22f9f
