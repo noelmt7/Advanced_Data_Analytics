@@ -11,7 +11,7 @@ os.environ['GROQ_API_KEY'] = 'gsk_zwLjvodASabcKlG6gBoAWGdyb3FYNFkcbJgY52ys46HITc
 
 def scrapedata(url):
     app = FirecrawlApp(api_key=os.getenv('FIRECRAWL_API_KEY'))
-    scrapedata = app.scrape(url)
+    scrapedata = app.scrape_url(url)
     if 'markdown' in scrapedata:
         return scrapedata['markdown']
     else:
