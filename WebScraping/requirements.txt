@@ -1,5 +1,0 @@
-firecrawl
-pandas
-openpyxl
-py-dotenv
-groq
