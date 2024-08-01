@@ -1,13 +1,15 @@
-import os 
-from dotenv import load_dotenv
+import os
 from groq import Groq
 from firecrawl import FirecrawlApp
 import json
 import pandas as pd
 from datetime import datetime
 
+# Directly set the environment variables
+os.environ['FIRECRAWL_API_KEY'] = 'fc-240ee3d23dee4ffa9499e6550cd22f9f'
+os.environ['GROQ_API_KEY'] = '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'
+
 def scrapedata(url):
-    load_dotenv()
     app = FirecrawlApp(api_key=os.getenv('FIRECRAWL_API_KEY'))
     scrapedata = app.scrape(url)
     if 'markdown' in scrapedata:
@@ -25,7 +27,6 @@ def savedata(rawdata, timestamp, output_folder='output'):
 
 # This function holds the llm model, mainly defining response format
 def formatdata(data):
-    load_dotenv()
     client = Groq(api_key=os.getenv('GROQ_API_KEY'))
     
     fields = ['Festival', 'Year']
